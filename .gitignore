@@ -1,0 +1,8 @@
+.vscode/*
+.sass-cache
+logs
+node_modules/
+.env
+# System Files
+.DS_Store
+Thumbs.db
