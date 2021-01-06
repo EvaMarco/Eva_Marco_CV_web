@@ -1,0 +1,248 @@
+@import "normalize";
+
+$primary-font:'Montserrat', sans-serif;
+$secondary-font: 'Domine', serif;
+$font-color: #333;
+$dark-color:#696969;
+$secondary-color: #1d8a60;
+$inverse-color: #dfe0df;
+$background-color: #b0b0b0;
+$bigMedia: 1260px;
+$mediumMedia: 960px;
+$midMedia: 760px;
+$smallMedia: 480px;
+
+html { scroll-behavior: smooth; }
+body {
+    font: 100% $primary-font;
+    color: $font-color;
+    background-color: $background-color;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.144), rgba(0, 0, 0, 0.61));
+}
+.content__wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    margin: 0;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color:  $background-color;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.144), rgba(0, 0, 0, 0.61)), url("../images/eva_marco_img.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 20px;
+
+    &__title{
+        color: $inverse-color;
+        font-family: $secondary-font;
+        margin: 0;
+    }
+
+    &__subtitle{
+        color: $inverse-color;
+        margin: 0;
+    }
+    &__action{
+        margin: 20px 0;
+    }
+
+    &__btn{
+        transition: background-color 0.5s ease, padding 0.2s linear;
+        background-color: $dark-color;
+        color:$inverse-color;
+        font-size: 1.5em;
+        border-radius: 7px;
+        cursor: pointer;
+        display: inline-block;
+        padding: 15px;
+        text-decoration: none;
+        &:hover{
+            background-color: $secondary-color;
+        }
+        &:active {
+            padding: 17px;
+          }
+    }
+
+    @media only screen and (max-width: $smallMedia) {
+        background-position: center;
+        justify-content: center;
+        align-items: flex-end;
+        &__title{
+            font-size: 2rem;
+            text-align: right;
+            display: block;
+            width: 100vw;
+        }
+
+        &__subtitle{
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        &__btn{
+            font-size: 1em;
+            border-radius: 7px;
+            padding: 13px;
+            &:active {
+                padding: 15px;
+              }
+        }
+    }
+
+    @media only screen and ( min-width: $smallMedia) and (max-width: $midMedia) {
+        background-size: cover;
+        background-position: center;
+        align-items: center;
+        justify-content: center;
+        &__title{
+            font-size: 2.5rem;
+        }
+
+        &__subtitle{
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+
+        &__btn{
+            font-size: 1.3rem;
+            border-radius: 7px;
+            padding: 13px;
+            &:active {
+                padding: 15px;
+              }
+        }
+    }
+
+    @media only screen and ( min-width: $midMedia) and (max-width: $mediumMedia) {
+        background-size: cover;
+        background-position: center;
+        align-items: center;
+        justify-content: center;
+        &__title{
+            font-size: 3rem;
+        }
+
+        &__subtitle{
+            margin-top: 20px;
+            font-size: 2rem;
+        }
+    }
+    @media only screen and (min-width: $mediumMedia) and (max-width: $bigMedia) {
+        &__title{
+            font-size: 4rem;
+        }
+
+        &__subtitle{
+            margin-top: 20px;
+            font-size: 3rem;
+        }
+    }
+    @media only screen and (min-width: $bigMedia) {
+        &__title{
+            font-size: 6rem;
+        }
+
+        &__subtitle{
+            font-size: 3rem;
+        }
+	}
+}
+
+.navbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: $secondary-color;
+    z-index: 1;
+
+    &__list{
+        margin: 0 auto;
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background-color: $secondary-color;
+        color: $inverse-color;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        &:hover{
+            background-color: $dark-color;
+        }
+    }
+    &__link{
+        width: 100%;
+        color: $inverse-color;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: $smallMedia) {
+        font-size: 1rem;
+    }
+
+    @media only screen and ( min-width: $midMedia) {
+        font-size:1.5rem;
+    }
+}
+.content__body{
+    background-color: $inverse-color;
+    padding: 20px;
+}
+.projects__title, .experience__title{ position:relative; }
+.about__title span, .projects__title span, .experience__title span{ position:absolute; top:-65px;}
+.about{
+    padding: 0 20px;
+    font-size: 1rem;
+    & p{
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    &__image{
+        border-radius: 50%;
+        float: left;
+        shape-outside: circle();
+        padding: 10px;
+        width: 30%;
+    }
+    &__title{
+        text-align: center;
+        font-family: $secondary-font;
+        position:relative;
+        font-size: 1.3rem;
+        margin: 5px
+    }
+
+    @media only screen and (min-width: $smallMedia) and ( max-width: $mediumMedia) {
+        font-size: 1.3rem;
+        &__image{
+            width: 40%;
+            padding:  20px;
+        }
+        &__title{
+            font-size: 2rem;
+        }
+    }
+    @media only screen and ( min-width: $mediumMedia) {
+        font-size: 1.5rem;
+        &__image{
+            width: 45%;
+            padding:  25px;
+        }
+        &__title{
+            font-size: 2.5rem;
+        }
+    }
+}
